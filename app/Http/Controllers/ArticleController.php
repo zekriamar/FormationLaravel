@@ -30,19 +30,34 @@ public function index(){
     return view ('articles.create') ; 
     }
 
-    public function store(){
+    public function store(Request $req){
     
-    Article::create(request()->all()+['user_id'=>1]);
- 
-    // Article::insert([
-    //  'name'=>request('name'),
-    // 'body'=>request('body'),
-    // 'created_at'=>request('created_at'),
+    request()->validate([
+        'name'=>'required|min:4|unique:articles',
+        'body'=>'required',
+        'created_at'=>'required',
+    ]);
 
-    // ]);    cette façon permet de stocker mais long
+    Article::create(request()->all()+['user_id'=>1]);
 
     return redirect()->route('articles.index');
  }
+
+
+// public function store(){
+    
+//     Article::create(request()->all()+['user_id'=>1]);
+ 
+//     // Article::insert([
+//     //  'name'=>request('name'),
+//     // 'body'=>request('body'),
+//     // 'created_at'=>request('created_at'),
+
+//     // ]);    cette façon permet de stocker mais long
+
+//     return redirect()->route('articles.index');
+//  }
+
 
 //      public function store(){
 //     $name=request('name');

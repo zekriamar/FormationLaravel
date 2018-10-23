@@ -146,6 +146,8 @@ return [
         'time'                  => 'heure',
         'available'             => 'disponible',
         'size'                  => 'taille',
+        'created_at'            => 'date publication',
+        'body'                  =>'description',
     ],
 
 ];

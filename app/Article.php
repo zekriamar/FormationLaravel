@@ -8,7 +8,7 @@ class Article extends Model
 {// protected $table=['articles'];//permet de spécifier le nom de la table si la table spécifié dans le nom de la fonction ne corresponda pas au nom réel de la table
     //
 
- protected $fillable= ['name','body'];
+ protected $fillable= ['name','body','published_at'];
 //permet de spécifier les champs qui s'enregistre automatiquement à partir du formlaire
  public function getNameAttribute() {
 
@@ -20,12 +20,20 @@ class Article extends Model
   public function getNameFormatedAttribute() {
 
     // créer une nouvelle colllonne -cette fonction 
-    if (request()->has('search')){
+    // if (request()->has('search')){
 
-   return str_replace(request('search'),'<mark>'.request('search').'</mark>',$this->Attributes['name']);
-    }
+   return str_replace(request('search'),'<mark>'.request('search').'</mark>',$this->attributes['name']);
+    // }
  }
-  public function getCreate_atAttribute() {
+   public function getBodyFormatedAttribute() {
+
+    // créer une nouvelle colllonne -cette fonction 
+    // if (request()->has('search')){
+
+   return str_replace(request('search'),'<mark>'.request('search').'</mark>',$this->attributes['body']);
+    // }
+ }
+  public function getPublished_atAttribute() {
 
     // créer une nouvelle colllonne -cette fonction 
     return Carbon::parse($this->attributes['create_at'])->diffforHumans();

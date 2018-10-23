@@ -35,7 +35,7 @@ public function index(){
     request()->validate([
         'name'=>'required|min:4|unique:articles',
         'body'=>'required',
-        'created_at'=>'required',
+        'published_at'=>'required',
     ]);
 
     Article::create(request()->all()+['user_id'=>1]);

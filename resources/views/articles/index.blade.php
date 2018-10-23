@@ -32,4 +32,3 @@
 
  //appends permet de garder le réseault de recherche me^me en changeant la page
  @endsection
-

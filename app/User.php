@@ -94,4 +94,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Article::class)->withDefault();//article appartient à un user
     }
+
+    public function roles()//nom n'import
+    {
+        return $this->belongsToMany(Role::class, 'user_role');//si les id ne sont pas noramlisé, troisième paramètre role_id
+    }
 }

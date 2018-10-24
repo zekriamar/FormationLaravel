@@ -8,7 +8,7 @@ Auth::routes();
 | Admin
 |------------------------------------------------------------------------------------
 */
-Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Role:10']], function () {
+    Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Role:10']], function () {
     Route::get('/', 'DashboardController@index')->name('dash');
     Route::resource('users', 'UserController');
 });
@@ -16,7 +16,6 @@ Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Ro
 Route::get('/', function () {
     return view('welcome');
 });
-
 
 Route::get('user/{id}/{nom}','PageController@user')
 ->where (['id'=>'[0-9]+','nom' =>'[a-zA-Z]+']);//permet le contrôle des paramètre

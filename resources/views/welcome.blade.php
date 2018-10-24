@@ -96,8 +96,8 @@
                 <div class="top-left links">
                     <a href="https://laravel.com/docs">Ma vie</a>
                     <a href="https://laracasts.com">Histoire</a>
-                    <a href="articles/create">Ajout article</a>
-                    <a href="articles">Articles</a>
+                    <a href="/articles/create">Ajout article</a>
+                    <a href="/articles">Articles</a>
                     <a href="https://forge.laravel.com">Réseau</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>

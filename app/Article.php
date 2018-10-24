@@ -8,7 +8,7 @@ class Article extends Model
 {// protected $table=['articles'];//permet de spécifier le nom de la table si la table spécifié dans le nom de la fonction ne corresponda pas au nom réel de la table
     //
 
- protected $fillable= ['name','body','published_at'];
+ protected $fillable= ['name','body','user_id','published_at'];
 //permet de spécifier les champs qui s'enregistre automatiquement à partir du formlaire
  public function getNameAttribute() {
 
@@ -18,7 +18,7 @@ class Article extends Model
  }
 
   public function getNameFormatedAttribute() {
-
+    
     // créer une nouvelle colllonne -cette fonction 
     // if (request()->has('search')){
 

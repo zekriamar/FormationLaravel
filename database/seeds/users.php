@@ -12,15 +12,15 @@ class users extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
+        $faker = Faker\Factory::create('fr_FR');//fr_FR pour que le résultat en français
         
         $data = [];
         
-        for ($i = 1; $i <= 1 ; $i++) {
+        for ($i = 1; $i <= 10 ; $i++) {
             array_push($data, [
-                'name' => 'hadji kouceyla',
-                'email' => 'test@example.com',
-                'password' => bcrypt('123456'),
+                'name' => $faker->name,
+                'email' => $faker->email,
+                'password' =>bcrypt('123456'),
                 'role'     => 10,
                 'bio'      => $faker->realText(),
             ]);

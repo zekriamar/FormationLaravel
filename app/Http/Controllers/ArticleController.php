@@ -35,7 +35,7 @@ public function index(){
     request()->validate([
         'name'=>'required|min:4|unique:articles',
         'body'=>'required',
-        'published_at'=>'required',
+        'published_at'=>'required|',
     ]);
 
     Article::create(request()->all()+['user_id'=>1]);
@@ -80,4 +80,7 @@ public function update(){
 public function destory(){
  article::where ('id',1)->delete();   
 }
+
+
+
 }

@@ -56,6 +56,11 @@ class Article extends Model
            // les trois sont identique 'status est un
  }
 
+public function user()//nom quelconque
+{
+  return $this->belongsTo(User::class)->withDefault();//article appartient à un user withdefault pour éviter erreur en cas pas de donnée
+ //User: nom de du modèle si user_id: est donnée dans la table donc ne necessite pas un paramtère
+}
 // explode('.','1998.24')[0]//permet de récuper la partie entière
 // explode('.','1998.24')[1]//permet de récuper la partie décimal
 

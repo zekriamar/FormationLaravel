@@ -81,13 +81,17 @@ class User extends Authenticatable
     public static function boot()
     {
         parent::boot();
-        static::updating(function($user)
-        {
+        static::updating(function ($user) {
             $original = $user->getOriginal();
             
             if (\Hash::check('', $user->password)) {
                 $user->attributes['password'] = $original['password'];
             }
         });
+    }
+
+    public function articles()//nom quelconque
+    {
+        return $this->hasMany(Article::class)->withDefault();//article appartient à un user
     }
 }

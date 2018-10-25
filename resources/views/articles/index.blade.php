@@ -6,10 +6,20 @@
 
 @section ('css')
  <link rel="stylesheet" href="style.css">
+ <style>
+    @media print{
+     .hidden-print{display:none}
+     .full-height {height: initial!important}
+     /* <ul>display:non</ul> */
+    }
 
+ </style>
+ {{-- <script>	window.print() </script> --}}
  @endsection
 
 @section ('mainName')
+
+<button class="hidden-print" onClick="window.print()"> Print </button>
 
 <form action="" class="form-inline">
  <input type="search" value="{{request('search')}}" class="form-control" name="search" placeholder="Recherche...">

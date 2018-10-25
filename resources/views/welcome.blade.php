@@ -69,9 +69,13 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        {{-- <ul id="menu" class="hidden-print"> 
+ <a href="/articles/create">Ajout article</a>
+  <a href="/articles/create">Ajout article</a>
+        </ul> --}}
+        <div class="flex-center position-ref full-height hidden-print">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-right links hidden-print">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
@@ -86,14 +90,14 @@
 
 
             </div>
-            <div class="content">
-                <div class="title m-b-md">
+            <div class="content hidden-print">
+                <div class="title m-b-md hidden-print">
                     Zekri Amar
                 </div>
-                <div class="container">
+                <div class="container hidden-print">
                 <img src="/img/tunis.jpg" width="800" height="600">
                 </div>
-                <div class="top-left links">
+                <div class="top-left links hidden-print">
                     <a href="https://laravel.com/docs">Ma vie</a>
                     <a href="https://laracasts.com">Histoire</a>
                     <a href="/articles/create">Ajout article</a>

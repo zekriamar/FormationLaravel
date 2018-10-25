@@ -92,7 +92,7 @@ class User extends Authenticatable
 
     public function articles()//nom quelconque
     {
-        return $this->hasMany(Article::class)->withDefault();//article appartient à un user
+        return $this->hasMany(Article::class);//->withDefault();//article appartient à un user
     }
 
     public function roles()//nom n'import
